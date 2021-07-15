@@ -286,7 +286,7 @@ Resources:
       EngineVersion: 8.0
       DBInstanceClass: db.t3.micro
       AllocatedStorage: 20
-      MasterUsername: admin
+      MasterUsername: admin1
       MasterUserPassword: !Ref Password
       MultiAZ: False
       BackupRetentionPeriod: 0 

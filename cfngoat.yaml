@@ -14,7 +14,7 @@ Parameters:
     Type: String
     Default: db1
   Password: 
-    Description: Database Password 
+    Description: Database Password1 
     Type: String
     NoEcho: True
     MinLength: 1

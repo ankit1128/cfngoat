@@ -41,7 +41,7 @@ Resources:
       ImageId: !Ref LatestAmiId
       SubnetId: !Ref WebSubnet
       Tags: 
-        - Key: Name
+        - Key: Name1
           Value: !Sub "${AWS::AccountId}-${CompanyName}-${Environment}-ec2" 
       UserData: 
         Fn::Base64: |
@@ -65,7 +65,7 @@ Resources:
       #Encrypted: False
       Size: 1
       Tags: 
-        - Key: Name
+        - Key: Name1
           Value: !Sub "${AWS::AccountId}-${CompanyName}-${Environment}-ebs"
 
   ### CFN Does not Support Volume Snapshot
@@ -105,7 +105,7 @@ Resources:
       EnableDnsSupport: True
       EnableDnsHostnames: True
       Tags:
-        - Key: Name
+        - Key: Name1
           Value: !Sub "${AWS::AccountId}-${CompanyName}-${Environment}-vpc"
 
   WebSubnet: 
@@ -118,7 +118,7 @@ Resources:
         - Fn::GetAZs: ""
       MapPublicIpOnLaunch: True
       Tags:
-        - Key: Name
+        - Key: Name1
           Value: !Sub "${AWS::AccountId}-${CompanyName}-${Environment}-subnet"
 
   WebSubnet2:
@@ -138,7 +138,7 @@ Resources:
     Type: AWS::EC2::InternetGateway
     Properties:
       Tags:
-        - Key: Name
+        - Key: Name1
           Value: !Sub "${AWS::AccountId}-${CompanyName}-${Environment}-igw"
 
   InternetGatewayAttachment:
@@ -152,7 +152,7 @@ Resources:
     Properties:
       VpcId: !Ref WebVPC
       Tags:
-        - Key: Name
+        - Key: Name1
           Value: !Sub "${AWS::AccountId}-${CompanyName}-${Environment}-rtb"
 
   WebDefaultPublicRoute:
@@ -182,7 +182,7 @@ Resources:
       SubnetId: !Ref WebSubnet
       PrivateIpAddress: 172.16.10.100
       Tags:
-        - Key: Name
+        - Key: Name1
           Value: !Sub "${AWS::AccountId}-${CompanyName}-${Environment}-primary_network_interface"
 
   VpcFlowLogs:
@@ -212,7 +212,7 @@ Resources:
     Properties:
       UserName: !Sub "${AWS::AccountId}-${CompanyName}-${Environment}-user"
       Tags:
-        - Key: Name
+        - Key: Name1
           Value: !Sub "${AWS::AccountId}-${CompanyName}-${Environment}-user"
         - Key: Environment
           Value: !Sub "${AWS::AccountId}-${CompanyName}-${Environment}"
@@ -294,7 +294,7 @@ Resources:
       MonitoringInterval: 0 
       PubliclyAccessible: True
       Tags:
-        - Key: Name
+        - Key: Name1
           Value: !Sub "${AWS::AccountId}-${CompanyName}-${Environment}-rds"
         - Key: Environment
           Value: !Sub "${AWS::AccountId}-${CompanyName}-${Environment}"
@@ -594,7 +594,7 @@ Resources:
       BucketName: !Sub "${AWS::AccountId}-${CompanyName}-${Environment}-data"
       AccessControl: PublicRead
       Tags:
-        - Key: Name
+        - Key: Name1
           Value: !Sub "${AWS::AccountId}-${CompanyName}-${Environment}-data"
 
   ### TODO - Custom Upload of insecure document
@@ -654,7 +654,7 @@ Resources:
               KMSMasterKeyID: !Ref LogsKey
               SSEAlgorithm: aws:kms
       Tags:
-        - Key: Name
+        - Key: Name1
           Value: !Sub "${AWS::AccountId}-${CompanyName}-${Environment}-logs"
 
    ########################

@@ -41,7 +41,7 @@ Resources:
       ImageId: !Ref LatestAmiId
       SubnetId: !Ref WebSubnet
       Tags: 
-        - Key: Name
+        - Key: Name1
           Value: !Sub "${AWS::AccountId}-${CompanyName}-${Environment}-ec2" 
       UserData: 
         Fn::Base64: |
